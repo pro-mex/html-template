@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            outline: none;
+            text-decoration: none;
+        }
+        
+        body {
+            line-height: 1.6;
+            color: rgb(83, 22, 22);
+            background: #fff;
+            font-size: 1.125rem;
+        }
+        
+        h1,
+        h2,
+        h3,
+        h4,
+        h5,
+        h6 {
+            color: #222;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        .container {
+            padding-right: 15px;
+            padding-left: 15px;
+            margin: 0px auto;
+            width: 100%;
+            max-width: 2200px;
+        }
+        
+        .services-content,
+        .presentation-content {
+            overflow: hidden;
+        }
+        
+        .sticky {
+            position: fixed;
+            z-index: 2;
+            overflow: hidden;
+            width: 100%;
+        }
+        
+        .section-padding {
+            padding: 100px 0px;
+        }
+        
+        .btn {
+            display: block;
+            padding: 1rem 1.5rem;
+            background: red;
+            color: #fff;
+            border-radius: 4px;
+            float: left;
+            margin-right: 15px;
+        }
+        
+        .btn-o {
+            background: transparent;
+            border: 1px solid red;
+            color: red;
+        }
+        
+        nav {
+            border-bottom: 1px solid #ccc;
+            background-color: #fff;
+        }
+        
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 0rem;
+        }
+        
+        .logo {
+            font-size: 20px;
+            text-transform: uppercase;
+        }
+        
+        .logo span {
+            color: red;
+        }
+        
+        nav ul li {
+            float: left;
+            display: inline-block;
+            margin-right: 30px;
+        }
+        
+        nav ul li a {
+            color: #555;
+            font-weight: 500;
+            font-size: 18px;
+            padding: 10px 10px;
+            display: block;
+            text-transform: uppercase;
+            background: #f1f1f1;
+        }
+        
+        .search-top .search-field {
+            border: #999 1px solid;
+            height: 30px;
+            border-radius: 3px;
+            margin-right: 1px;
+            padding: 10px;
+        }
+        
+        .search-top .search-btn {
+            padding: 5px 15px;
+            height: 30px;
+            border: 1px solid #999;
+            background-color: #f1f1f1;
+            color: #999;
+            border-radius: 3px;
+        }
+        
+        .hero-area {
+            background: url(https://images.unsplash.com/photo-1502945015378-0e284ca1a5be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80) no-repeat;
+            background-size: cover;
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .hero-area .hero-text-zone {
+            background: rgba(44, 44, 44, 0.5);
+            max-width: 670px;
+            width: 100%;
+            padding: 4rem;
+            border-radius: 20px;
+            box-shadow: 5px 5px 10px #555;
+            position: absolute;
+            top: 200px;
+            left: 59px;
+            color: #fff;
+        }
+        
+        .hero-area .hero-text-zone h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        
+        .hero-area .hero-text-zone p {
+            margin-bottom: 20px;
+        }
+        
+        .hero-area .hero-text-zone .btn {}
+        
+        .col-3 {
+            width: 25%;
+            float: left;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        
+        .services-area .services-content {
+            text-align: center;
+        }
+        
+        .services-area .services-content .services-title {
+            max-width: 600px;
+            margin: 0 auto;
+            margin-bottom: 60px;
+        }
+        
+        .services-area .services-content .services-title h2 {
+            font-size: 40px;
+            margin-bottom: 24px;
+        }
+        
+        .services-area .services-content .services-title h2::after {
+            content: "";
+            height: 5px;
+            width: 50px;
+            background: red;
+            border-radius: 3px;
+            display: block;
+            margin: 10px auto -10px;
+        }
+        
+        .services-area .services-content .services-title p {
+            line-height: 1.5;
+        }
+        
+        .services-area .services-content .single-service span {
+            display: block;
+            width: 60px;
+            height: 60px;
+            margin: 0 auto;
+            background: #ccc;
+            color: #fff;
+            font-size: 40px;
+            text-align: center;
+            padding: 0px 10px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+        }
+        
+        .services-area .services-content .single-service h4 {
+            color: red;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+        
+        .services-area .services-content .single-service p {
+            line-height: 1.5;
+        }
+        
+        .presentation-content {
+            background: #f1f1f1;
+        }
+        
+        .presentation-img,
+        .presentation-text {
+            width: 50%;
+            float: left;
+        }
+        
+        .presentation-img {
+            background: gray;
+        }
+        
+        .presentation-text {
+            padding: 40px 30px;
+        }
+        
+        .presentation-text h2 {
+            font-size: 40px;
+            margin-bottom: 30px;
+        }
+        
+        .presentation-text p {
+            width: 100%;
+            overflow-wrap: break-word;
+            text-justify: newspaper;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="sticky">
+        <nav>
+            <div class="container">
+                <div class="top-nav">
+                    <div class="logo">
+                        <h1>Az <span>Tech</span></h1>
+                    </div>
+                    <ul class="nav-menu">
+                        <li><a href="#">home</a></li>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <div class="search-top">
+                        <input type="text" name="search" id="" class="search-field">
+                        <input type="button" value="do_search" class="search-btn">
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="hero-area">
+            <div class="hero-text-zone">
+                <h2>Lorem ipsum dolor sit amet.</h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate incidunt explicabo quasi sit culpa reprehenderit earum harum aperiam! Excepturi, mollitia.</p>
+                <a href="# " class="btn btn-o">More...</a>
+                <a href="# " class="btn">Download</a>
+            </div>
+        </div>
+        <div class="services-area">
+            <div class="container">
+                <div class="services-content section-padding">
+                    <div class="services-title">
+                        <h2>Lorem ipsum dolor sit.</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Doloremque natus eos asperiores minus odio quas.</p>
+                    </div>
+                    <div class="col-3">
+                        <div class="single-service">
+                            <span>&copy;</span>
+                            <h4>service 1</h4>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolor ad quidem? </p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="single-service">
+                            <span>&copy;</span>
+                            <h4>service 2</h4>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolor ad quidem? </p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="single-service">
+                            <span>&copy;</span>
+                            <h4>service 1</h4>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolor ad quidem? </p>
+                        </div>
+                    </div>
+                    <div class="col-3">
+                        <div class="single-service">
+                            <span>&copy;</span>
+                            <h4>service 1</h4>
+                            <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis dolor ad quidem? </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="presentation-area">
+            <div class="presentation-content">
+                <div class="presentation-img">
+                    <img src="" alt="">
+                </div>
+                <div class="presentation-text">
+                    <h2>Presentation of the company</h2>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate, fuga!. Lorem ipsum dolor sit amet consectetur adipisicing elit. Iste, dicta in. Culpa quae voluptatum reiciendis! Illum aut inventore natus nisi!</p>
+                    <a href="" class="btn">More...</a>
+                </div>
+            </div>
+        </div>
+
+    </main>
+    <aside></aside>
+    <footer></footer>
+</body>
+
+</html>
